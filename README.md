@@ -72,3 +72,82 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+# Software Impementation Project
+====================================
+## Setting up project
+Please ensure that:
+1. larevel and
+2. composer are already setup on your machine before proceeding.
+2. PHP is installed on your machine
+3. An Apache server via Xammp, Wamp or LAMP
+[installing laravel](https://laravel.com/docs/5.8/installation)
+[installing composer](https://getcomposer.org/doc/00-intro.md)
+4. create a database(mySql) name mdl. visit http://localhost/phpmyadmin/
+
+
+After cloning the project, cd into the directory and run the following command(s):
+1. **composer install**, this install the project depemdencies
+2. **composer update**, updates the project depemcies
+3. **php artisan migrate**, migrates database tables to the database
+4. **php artisan db:seed**, creates default data in the database. Will also create the roles and permissions in the database and link each user type(role) to its appropriate set of permissions.
+
+
+## Starting the server/ running the project
+run the command **php artisan serve
+
+# User types(roles)
+=======
+There are three user types:
+1. admin
+2. clerk
+3. customer
+
+## user roles-permissions
+=======
+
+**admin**
+Permissions: 
+1. add stock
+2. delete stock
+3. update stock
+4. view stock
+5. view customers
+6. view customer quotes
+7. add user
+8. delete user
+
+In the interest of time, we probably won't implement number 7 to 8. Number 1 to 6 are oarts of the the core functions of the system and are also the permissions that a clerk has.
+
+
+**clerk**
+Permissions:
+1. add stock
+2. delete stock
+3. update stock
+4. view stock
+5. view customers
+6. view customer quotes
+
+**customer**
+Permissions:
+view items
+1. purchase
+2 .get quote
+3. view cart
+4. edit cart
+5. delete cart item
+
+#Default users
+| User type       | Email       | Password  |
+| ------------- |:-------------:| -----:|
+|Clerk          |clerk@gmail.com| secret |
+|admin         | admin@gmail.com| secret |
+|Customer      |holding@gmail.com |secert|
+
+
+
+
