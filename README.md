@@ -80,7 +80,7 @@ The Laravel framework is open-source software licensed under the [MIT license](h
 ====================================
 ## Setting up project
 Please ensure that:
-1. larevel and
+1. laravel and
 2. composer are already setup on your machine before proceeding.
 2. PHP is installed on your machine
 3. An Apache server via Xammp, Wamp or LAMP
@@ -142,11 +142,10 @@ view items
 5. delete cart item
 
 #Default users
-| User type       | Email       | Password  |
-| ------------- |:-------------:| -----:|
-|Clerk          |clerk@gmail.com| secret |
-|admin         | admin@gmail.com| secret |
-|Customer      |holding@gmail.com |secert|
+**ALL PASSWORD**:  secret
+clerk: clerk@gmail.com
+admin: admin@gmail.com
+customer: holding@gmail.com
 
 
 
