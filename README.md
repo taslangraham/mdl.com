@@ -100,14 +100,14 @@ After cloning the project, cd into the directory and run the following command(s
 run the command **php artisan serve
 
 # User types(roles)
-=======
+========================================================
 There are three user types:
 1. admin
 2. clerk
 3. customer
 
 ## user roles-permissions
-=======
+=========================================================
 
 **admin**
 Permissions: 
@@ -141,7 +141,7 @@ view items
 4. edit cart
 5. delete cart item
 
-#Default users
+# Default users
 **ALL PASSWORD**:  secret
 clerk: clerk@gmail.com
 admin: admin@gmail.com
