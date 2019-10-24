@@ -18,7 +18,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('admin/products/index', with([
+        return view('products/index', with([
             'products' => Products::all()
         ]));
     }
@@ -29,7 +29,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('admin.products.newProduct');
+        return view('products.newProduct');
     }
 
     /**
@@ -50,7 +50,7 @@ class ProductsController extends Controller
         ]);
         $this->saveProduct($request);
         Session::flash('success', 'Successfully Added product');
-        return redirect()->route('admin.products');
+        return redirect()->route('products');
     }
 
 
@@ -87,7 +87,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return view('admin.products.edit', with([
+        return view('products.edit', with([
             'product' => Products::find($id)
         ]));
     }
@@ -144,7 +144,7 @@ class ProductsController extends Controller
 
         $product->update();
         Session::flash('success', 'Successfully updated product');
-        return redirect()->route('admin.products');
+        return redirect()->route('products');
 
     }
 
@@ -160,7 +160,7 @@ class ProductsController extends Controller
         $product->delete();
 
         Session::flash('success', 'Successfully deleted product');
-        return redirect()->route('admin.products');
+        return redirect()->route('products');
     }
 
     public function getImageBasePath()

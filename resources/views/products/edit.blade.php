@@ -39,7 +39,7 @@
                         />
                     
                     </div>
-                    <form action="{{route('admin.product.update',['id'=>$product->id])}}" method="post"
+                    <form action="{{route('product.update',['id'=>$product->id])}}" method="post"
                           enctype="multipart/form-data">
                         @csrf
                         

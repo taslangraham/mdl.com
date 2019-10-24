@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="btn-group">
-            <a href="{{route('admin.products.new')}}">
+            <a href="{{route('product.new')}}">
                 <button class="btn btn-primary">Add Product</button>
             </a>
         </div>
@@ -43,13 +43,15 @@
                             </td>
                             <td>
                                <div class="dbt-group">
-                                   <a href="{{route('admin.product.view',['id' => $product->id])}}">
+                                   <a href="{{route('product.view',['id' => $product->id])}}">
                                        <button class="btn btn-primary">View</button>
                                    </a>
     
-                                   <a href="{{route('admin.product.delete',['id' => $product->id])}}" onclick="return confirm('Are you sure?')">
+                               @role('admin')
+                                   <a href="{{route('product.delete',['id' => $product->id])}}" onclick="return confirm('Are you sure?')">
                                        <button class="btn btn-danger">Delete</button>
                                    </a>
+                                   @endrole
                                </div>
                             </td>
                         </tr>

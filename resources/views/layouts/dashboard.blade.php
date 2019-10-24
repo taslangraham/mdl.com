@@ -342,9 +342,9 @@ use App\Http\Controllers\UtilityController ;
                     </li>
                     @endrole
                     
-                    @role('admin')
+                    @role('admin|clerk')
                     <li>
-                        <a href="{{route('admin.products')}}">
+                        <a href="{{route('products')}}">
                             <i class="fa fa-th"></i> <span>Products</span>
                             <span class="pull-right-container">
                         </span>

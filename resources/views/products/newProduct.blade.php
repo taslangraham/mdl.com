@@ -28,7 +28,7 @@
                         </div>
     
                     @endif
-                    <form action="{{route('admin.product.save')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('product.save')}}" method="post" enctype="multipart/form-data">
                         @csrf
     
                         <div class="form-group">
