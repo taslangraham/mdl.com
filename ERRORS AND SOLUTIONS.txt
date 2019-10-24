@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/24138189/runtimeexception-splfileinfogetsize-stat-failed-for-laravel-4-upload-ima
+
+
+SplFileInfo::getSize(): stat failed” exception on Laravel 6.0 when doing file upload:
+	* https://stackoverflow.com/questions/57860812/splfileinfogetsize-stat-failed-exception-on-laravel-6-0-when-doing-file-u

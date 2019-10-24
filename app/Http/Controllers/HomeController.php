@@ -27,11 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $user = Auth::user();
-        // return Auth::user()->getAllPermissions();
-        // return User::role('customer')->get();
-        // return $user->getRoleNames();
-
         return view('home');
     }
 }

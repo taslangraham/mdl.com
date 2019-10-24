@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
+Route::get('/home', 'HomeController@index')->name('HOME');
 
 
 Route::middleware('role:customer')->group(function () {
@@ -27,8 +25,32 @@ Route::middleware('role:customer')->group(function () {
 });
 
 
-Route::middleware('role:admin')->group(function () {
+Route::middleware(['role:admin', 'auth'])->prefix('admin')->group(function () {
     //place all routes accessible ONLY by a logged admin her
+    Route::get('/products', [
+        'uses' => 'ProductsController@index', 'as' => 'admin.products'
+    ]);
+
+    Route::post('/product/save', [
+        'uses' => 'ProductsController@store', 'as' => 'admin.product.save'
+    ]);
+
+    Route::get('/product/create', [
+        'uses' => 'ProductsController@create', 'as' => 'admin.products.new'
+    ]);
+
+    Route::get('/product/view/{id}', [
+        'uses' => 'ProductsController@show', 'as' => 'admin.product.view'
+    ]);
+
+    Route::post('/product/update/{id}', [
+        'uses' => 'ProductsController@update', 'as' => 'admin.product.update'
+    ]);
+
+    Route::get('/product/delete/{id}', [
+        'uses' => 'ProductsController@destroy', 'as' => 'admin.product.delete'
+    ]);
+
 });
 
 
