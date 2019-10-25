@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36d06312-acd6-48de-bd1f-f877880732c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/products/newProduct.blade.php" afterPath="$PROJECT_DIR$/resources/views/products/newProduct.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -601,12 +592,12 @@
       <workItem from="1571013557173" duration="12572000" />
       <workItem from="1571359372373" duration="6838000" />
       <workItem from="1571863907421" duration="10142000" />
-      <workItem from="1571885009287" duration="17578000" />
+      <workItem from="1571885009287" duration="17981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48245000" />
+    <option name="totallyTimeSpent" value="48648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
