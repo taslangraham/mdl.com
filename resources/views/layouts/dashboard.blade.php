@@ -21,7 +21,7 @@ use App\Http\Controllers\UtilityController ;
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/dist/css/skins/_all-skins.min.css')}}">
     <script src="{{asset('/bower_components/jquery/dist/jquery.js')}}"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -277,9 +277,7 @@ use App\Http\Controllers\UtilityController ;
                             
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
+                                
                                 <div class="pull-right">
                                     
                                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
@@ -296,15 +294,13 @@ use App\Http\Controllers\UtilityController ;
                             </li>
                         </ul>
                     </li>
-                    <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
+                  
                 </ul>
             </div>
         </nav>
     </header>
-    
+
+@if (Route::has('login'))
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -318,7 +314,7 @@ use App\Http\Controllers\UtilityController ;
                     
                     @role('customer')
                     <li>
-                        <a href="#">
+                        <a href="{{route('customer.cart')}}">
                             <i class="fa fa-th"></i> <span>cart</span>
                             <span class="pull-right-container">
                         </span>
@@ -326,8 +322,8 @@ use App\Http\Controllers\UtilityController ;
                     </li>
                     
                     <li>
-                        <a href="#">
-                            <i class="fa fa-th"></i> <span>Products</span>
+                        <a href="{{route('products.all')}}">
+                            <i class="fa fa-th"></i> <span>Store</span>
                             <span class="pull-right-container">
                         </span>
                         </a>
@@ -373,20 +369,10 @@ use App\Http\Controllers\UtilityController ;
         </section>
         <!-- /.sidebar -->
     </aside>
-    
+ @endif
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Dashboard
-            
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
+     
         
         <!-- Main content -->
         <section class="content">
@@ -477,7 +463,6 @@ use App\Http\Controllers\UtilityController ;
 
 
 <script src="dist/js/adminlte.min.js"></script>
-@yield('scripts')
 
 <script>
     @if(Session::has('success'))
@@ -488,5 +473,7 @@ use App\Http\Controllers\UtilityController ;
         @endif
     @endif
 </script>
+@yield('scripts')
+
 </body>
 </html>

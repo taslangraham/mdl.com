@@ -163,6 +163,43 @@ class ProductsController extends Controller
         return redirect()->route('products');
     }
 
+
+    public function all()
+    {
+        $products = Products::all();
+//        dd(count($products));
+        return view('products.marketPlace', with(['products' => $products]));
+    }
+
+
+    public function getProductById($id)
+    {
+        $product = Products::find($id);
+        if ($product === null) {
+            Session::flash('error', 'Product not found');
+            return redirect()->back();
+        } else {
+            return view('products.productInfoAndAddToCart', with(['product' => $product]));
+
+        }
+
+    }
+
+    public static function isProductAvailable($productId, $quantity)
+    {
+        $product = Products::find($productId);
+        return $product->quantity >= $quantity ? true : false;
+    }
+
+    public static function reduceProductByQuantityAddedToCart($productId, $quantity)
+    {
+        $product = Products::find($productId);
+        if ($product != null) {
+            $product->quantity -= $quantity;
+            return $product->save() ? true : false;
+        }
+    }
+
     public function getImageBasePath()
     {
         return "images/products";

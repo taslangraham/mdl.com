@@ -76,12 +76,14 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+                        <a href="">Store</a>
+
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    MDL
                 </div>
 
                 <div class="links">

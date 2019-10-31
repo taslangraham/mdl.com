@@ -19,16 +19,28 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('HOME');
 
+Route::get('/store', 'ProductsController@all')->name('products.all');
 
-Route::middleware('role:customer')->group(function () {
+Route::get('/product/view/{productId}', [
+    'uses' => 'ProductsController@getProductById', 'as' => 'product.singleProduct'
+]);
+
+Route::middleware(['role:customer', 'auth'])->prefix('customer')->group(function () {
     //place all routes accessible ONLY by a logged in customer here
+    Route::post('/cart/addItem/{productId}', [
+        'uses' => 'CartController@create', 'as' => 'addToCart'
+    ]);
+
+    Route::get("/cart", [
+        'uses' => 'CustomerController@viewCart', 'as' => 'customer.cart'
+    ]);
 });
 
 
 Route::middleware(['role:admin', 'auth'])->prefix('admin')->group(function () {
     //place all routes accessible ONLY by a logged admin has
-    route::get('/',[
-        'uses'=>'AdminController@index', 'as' =>'admin.home'
+    route::get('/', [
+        'uses' => 'AdminController@index', 'as' => 'admin.home'
     ]);
 
     Route::get('product/delete/{id}', [
@@ -37,7 +49,7 @@ Route::middleware(['role:admin', 'auth'])->prefix('admin')->group(function () {
 
 });
 
-Route::middleware(['role:admin|clerk'])->prefix('product')->group(function () {
+Route::middleware(['role:admin|clerk', 'auth'])->prefix('product')->group(function () {
     //place all routes accessible to BOTH a logged in admin and clerk
 
     Route::get('/', [
@@ -52,7 +64,7 @@ Route::middleware(['role:admin|clerk'])->prefix('product')->group(function () {
         'uses' => 'ProductsController@create', 'as' => 'product.new'
     ]);
 
-    Route::get('/view/{id}', [
+    Route::get('/edit/{id}', [
         'uses' => 'ProductsController@show', 'as' => 'product.view'
     ]);
 

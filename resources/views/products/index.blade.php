@@ -13,7 +13,7 @@
         <div class="card-body">
             @if(count($products)>0)
         
-                <table class="table table-hover table-striped table-responsive" id="products-table" border="1">
+                <table class="table table-hover table-responsive  table-striped" id="products-table" style="border:none;">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -78,6 +78,11 @@
     </script>
     @yield('scripts')
     <script src="{{asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+
+    <script>
+        var productsTableLength = document.getElementById('products-table_length');
+        productsTableLength.classList.add('form-group');
+    </script>
 
 @endsection
 
