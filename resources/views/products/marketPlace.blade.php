@@ -9,11 +9,11 @@
             <div class="row">
                 @foreach($products as $product)
                     <div class="col-sm-4 mt-3 ">
-                        <div class="card-body" style="">
+                        <div class="panel-body" style="">
                             <div class="overlay">
                                 <a href="">
                                     <img
-                                            class="img img-responsive img-fluid card-img-top"
+                                            class="img img-responsive img-fluid panel-img-top"
                                             src="{{asset($product->image_path. '/'. $product->image_name)}}"
                                             alt=""
                                             style="height: 200px;"
@@ -21,7 +21,7 @@
                                 </a>
                             </div>
                             
-                            <div class="card-text">
+                            <div class="panel-text">
                                 <h3 class="mt-1"><strong>{{$product->name}}</strong></h3>
                                 Price: ${{number_format($product->price_per_unit, 2)}} JMD | In
                                 Stock: {{$product->quantity}}

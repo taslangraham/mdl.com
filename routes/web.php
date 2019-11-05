@@ -34,6 +34,22 @@ Route::middleware(['role:customer', 'auth'])->prefix('customer')->group(function
     Route::get("/cart", [
         'uses' => 'CustomerController@viewCart', 'as' => 'customer.cart'
     ]);
+
+    Route::get("/orders", [
+        'uses' => 'CustomerController@orders', 'as' => 'customer.orders'
+    ]);
+
+    Route::get("/submitOrder", [
+        'uses' => 'CustomerController@submitOrder' , 'as' => 'customer.submitOrder'
+    ]);
+
+    Route::post("/stripe/make/payment", [
+        'uses'=>'StripePaymentController@validateAddressAndmakePayment', 'as' => 'stripe.payment'
+    ] );
+
+    Route::get('/order/details/{orderId}/{customerId}', [
+        'uses' => 'CustomerController@orderDetails', 'as' => 'customer.order.details'
+    ]);
 });
 
 
@@ -72,5 +88,15 @@ Route::middleware(['role:admin|clerk', 'auth'])->prefix('product')->group(functi
         'uses' => 'ProductsController@update', 'as' => 'product.update'
     ]);
 
+    Route::get('/orders', [
+        'uses' => 'OrderController@getAllOrders', 'as' => 'admin.orders'
+    ]);
 
+    Route::put('/order/deliveryStatus/update/{orderId}', [
+        'uses'=>'OrderController@updateOrderStatus', 'as' =>'order.update.status'
+    ]);
+
+    Route::get('/order/details/{orderId}/{customerId}', [
+        'uses' => 'CustomerController@orderDetails', 'as' => 'order.details'
+    ]);
 });

@@ -28,6 +28,9 @@ class DefaultUsers extends Seeder
             'name' => 'Rob Holding',
             'email' => 'holding@gmail.com',
             'password' => Hash::make('secret'),
+            'street'=>'3A Tavern',
+            'town'=>'Kingston',
+            'parish'=>'Kingston',
         ]);
         $customer->assignRole('customer');
     }
@@ -38,6 +41,9 @@ class DefaultUsers extends Seeder
             'name' => 'Default Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('secret'),
+            'street'=>'3A Tavern',
+            'town'=>'Kingston',
+            'parish'=>'Kingston',
         ]);
         $admin->assignRole('admin');
     }
@@ -48,6 +54,9 @@ class DefaultUsers extends Seeder
             'name' => 'Mdl Clerk',
             'email' => 'clerk@gmail.com',
             'password' => Hash::make('secret'),
+            'street'=>'3A Tavern',
+            'town'=>'Kingston',
+            'parish'=>'Kingston',
         ]);
         $clerk->assignRole('clerk');
     }

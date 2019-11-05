@@ -14,11 +14,10 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 10001);
             $table->integer('cutomer_id');
-            $table->timestamp('date');
             $table->double('total_cost');
-            $table->boolean('Boolean');
+            $table->boolean('isDelivered');
             $table->longText('delivery_address');
             $table->timestamps();
 

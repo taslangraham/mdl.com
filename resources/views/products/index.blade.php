@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
-
+@section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="btn-group">
@@ -9,8 +11,8 @@
         </div>
     
        
-      <div class="card" style="margin-top: 15px;">
-        <div class="card-body">
+      <div class="panel" style="margin-top: 15px;">
+        <div class="panel-body">
             @if(count($products)>0)
         
                 <table class="table table-hover table-responsive  table-striped" id="products-table" style="border:none;">
@@ -79,10 +81,7 @@
     @yield('scripts')
     <script src="{{asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 
-    <script>
-        var productsTableLength = document.getElementById('products-table_length');
-        productsTableLength.classList.add('form-group');
-    </script>
+ 
 
 @endsection
 

@@ -10,4 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 class Products extends Model
 {
     use SoftDeletes;
+
+    public function cartItems(){
+        return $this->hasMany('App\CartItem','product_id','id');
+    }
 }
