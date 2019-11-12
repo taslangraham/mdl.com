@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
-
+@section('title')
+    Order/Payment
+@endsection
 @section('content')
     
     <div class="container">

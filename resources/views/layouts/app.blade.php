@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>{{ config('app.name') }}</title>
+    <title>@yield('title')</title>
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,11 +26,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
-<body>
+<body style="background-color: #e9ebee">
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light  shadow-sm " style="background-color: #3c8dbc;">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm " style="background-color:#00838f;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand ml-5" href="{{ url('/') }}" style="color: white; font-weight: bolder">
                 {{ config('app.king', 'MDL') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -40,27 +40,24 @@
             </button>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-                
-                </ul>
+              
                 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="{{ route('login') }}" style="color: white;">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}" style="color: white;">{{ __('Register') }}</a>
                         </li>
                     @endif
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false" v-pre>
+                               aria-haspopup="true" aria-expanded="false" v-pre style="color: white;">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             
@@ -78,8 +75,8 @@
                             </div>
                         </li>
                         @endguest
-                        <li class="nav-item">
-                            <a href="/store" class="nav-link">Store</a>
+                        <li class="nav-item" >
+                            <a href="/store" class="nav-link" style="color: white;">Store</a>
                         </li>
                 </ul>
             </div>

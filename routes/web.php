@@ -40,15 +40,19 @@ Route::middleware(['role:customer', 'auth'])->prefix('customer')->group(function
     ]);
 
     Route::get("/submitOrder", [
-        'uses' => 'CustomerController@submitOrder' , 'as' => 'customer.submitOrder'
+        'uses' => 'CustomerController@submitOrder', 'as' => 'customer.submitOrder'
     ]);
 
     Route::post("/stripe/make/payment", [
-        'uses'=>'StripePaymentController@validateAddressAndmakePayment', 'as' => 'stripe.payment'
-    ] );
+        'uses' => 'StripePaymentController@validateAddressAndmakePayment', 'as' => 'stripe.payment'
+    ]);
 
     Route::get('/order/details/{orderId}/{customerId}', [
         'uses' => 'CustomerController@orderDetails', 'as' => 'customer.order.details'
+    ]);
+
+    Route::get('/cart/removeItem/{itemId}', [
+        'uses' => 'CustomerController@removerCartItem', 'as' =>'customer.cart.remove.item'
     ]);
 });
 
@@ -63,6 +67,9 @@ Route::middleware(['role:admin', 'auth'])->prefix('admin')->group(function () {
         'uses' => 'ProductsController@destroy', 'as' => 'product.delete'
     ]);
 
+    Route::get("/customers", [
+        'uses' => 'AdminController@getCustomers', 'as' => 'admin.customers'
+    ]);
 });
 
 Route::middleware(['role:admin|clerk', 'auth'])->prefix('product')->group(function () {
@@ -93,7 +100,7 @@ Route::middleware(['role:admin|clerk', 'auth'])->prefix('product')->group(functi
     ]);
 
     Route::put('/order/deliveryStatus/update/{orderId}', [
-        'uses'=>'OrderController@updateOrderStatus', 'as' =>'order.update.status'
+        'uses' => 'OrderController@updateOrderStatus', 'as' => 'order.update.status'
     ]);
 
     Route::get('/order/details/{orderId}/{customerId}', [

@@ -1,15 +1,20 @@
 @extends('layouts.app')
+
+@section('title')
+    Store
+@endsection
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
 @section('content')
     @if($products==null)
         <h1>We are currrently out of stock</h1>
     @else
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 @foreach($products as $product)
-                    <div class="col-sm-4 mt-3 ">
-                        <div class="panel-body" style="">
+                    <div class="col-sm-4 mt-3 ml-2 card">
+                        <div class="card-body" style="">
                             <div class="overlay">
                                 <a href="">
                                     <img
@@ -35,6 +40,8 @@
                         </div>
                     </div>
                 @endforeach
+                
+            
             </div>
         </div>
     @endif

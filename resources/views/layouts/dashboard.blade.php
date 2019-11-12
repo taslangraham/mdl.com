@@ -1,12 +1,14 @@
 <?php
-use App\Http\Controllers\UtilityController ;
+use App\Http\Controllers\UtilityController;
+use App\Http\Controllers\AdminController;
+
 ?>
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MDL | Dashboard</title>
+    <title>@yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -40,23 +42,28 @@ use App\Http\Controllers\UtilityController ;
     @yield('css')
 
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
+<style>
+    #navbar{
+        background-color:#00838f
+    }
+
+</style>
+
 <div class="wrapper">
     
     <header class="main-header">
         <!-- Logo -->
-        <a href="/home" class="logo">
+        <a href="/home" class="logo" id="navbar">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>MDL</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
+        <nav class="navbar navbar-static-top"  id="navbar">
             <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
+          
             
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
@@ -88,7 +95,7 @@ use App\Http\Controllers\UtilityController ;
                             </li>
                         </ul>
                     </li>
-                  
+                
                 </ul>
             </div>
         </nav>
@@ -96,135 +103,146 @@ use App\Http\Controllers\UtilityController ;
 
 @if (Route::has('login'))
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                
-                
-                <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu" data-widget="tree">
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" >
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
                     
-                    @role('customer')
-                    <li>
-                        <a href="{{route('customer.cart')}}">
-                            <i class="fa fa-cart-plus"></i><span>cart</span>
-                            <span class="pull-right-container">
-                        </span>
-                        </a>
-                    </li>
                     
-                    <li>
-                        <a href="{{route('products.all')}}">
-                            <i class="fa fa-shopping-bag"></i> <span>Store</span>
-                            <span class="pull-right-container">
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree">
+                        
+                        @role('customer')
+                        <li>
+                            <a href="{{route('customer.cart')}}">
+                                <i class="fa fa-cart-plus"></i><span>cart</span>
+                                <span class="pull-right-container">
                         </span>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="{{route('products.all')}}">
+                                <i class="fa fa-shopping-bag"></i> <span>Store</span>
+                                <span class="pull-right-container">
+                        </span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="{{route('customer.orders')}}">
+                                <i class="fa fa-th"></i><span>Orders</span>
+                                <span class="pull-right-container">
+                        </span>
+                            </a>
+                        </li>
+                        @endrole
+                        
+                        @role('admin|clerk')
+                        <li>
+                            <a href="{{route('products')}}">
+                                <i class="fa fa-th"></i> <span>Products</span>
+                                <span class="pull-right-container">
+                        </span>
+                            </a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="{{route('admin.orders')}}">
+                                <i class="fa fa-th"></i> <span>Orders</span>
+                                <span class="pull-right-container">
+                        </span>
+                            </a>
+                        </li>
+                        @endrole
+                        
+                        @role('admin')
+                        <li>
+                            <a href="{{route('admin.customers')}}">
+                                <i class="fa fa-th"></i> <span>Customers</span>
+                                <span class="pull-right-container">
+                        </span>
+                            </a>
+                        </li>
+                        @endrole
                     
-                    <li>
-                        <a href="{{route('customer.orders')}}">
-                            <i class="fa fa-th"></i><span>Orders</span>
-                            <span class="pull-right-container">
-                        </span>
-                        </a>
-                    </li>
-                    @endrole
-                    
-                    @role('admin|clerk')
-                    <li>
-                        <a href="{{route('products')}}">
-                            <i class="fa fa-th"></i> <span>Products</span>
-                            <span class="pull-right-container">
-                        </span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-th"></i> <span>Customers</span>
-                            <span class="pull-right-container">
-                        </span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="{{route('admin.orders')}}">
-                            <i class="fa fa-th"></i> <span>Orders</span>
-                            <span class="pull-right-container">
-                        </span>
-                        </a>
-                    </li>
-                    @endrole
-                
-                </ul>
-            </div>
-        </section>
-        <!-- /.sidebar -->
-    </aside>
- @endif
-    <!-- Content Wrapper. Contains page content -->
+                    </ul>
+                </div>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+@endif
+<!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-     
+        
         
         <!-- Main content -->
         <section class="content">
-        
-        @role('admin')
-        <!-- Small boxes (Stat box) -->
+            
+            
+            <!-- Small boxes (Stat box) -->
             <div class="row">
+                @role('clerk|admin')
                 <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>150</h3>
-                            
+                            <h3>{{AdminController::numberOfOrders()}}</h3>
                             <p>New Orders</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{route('admin.orders')}}" class="small-box-footer">More info <i
+                                    class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
+          
+            <!-- ./col -->
                 <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>{{UtilityController::countProducts()}}</h3>
+                            <h3>{{\App\Http\Controllers\UtilityController::countProducts()}}</h3>
                             
                             <p>Total Products</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{route('products')}}" class="small-box-footer">More info <i
+                                    class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
+                @endrole
+                
+                @role('admin')
+            <!-- ./col -->
                 <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>{{UtilityController::countCustomers()}}</h3>
+                            <h3>{{\App\Http\Controllers\UtilityController::countCustomers()}}</h3>
                             
                             <p>Customers</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{route('admin.customers')}}" class="small-box-footer">More info <i
+                                    class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
-           
+                
                 <!-- ./col -->
+                @endrole
             </div>
-        @endrole
-        
-        <!-- /.row -->
+            
+            
+            <!-- /.row -->
             <!-- Main row -->
             <div class="row">
                 
@@ -264,7 +282,7 @@ use App\Http\Controllers\UtilityController ;
     @else
         @if(Session::has('error'))
             toastr.error("{{ Session::get('error') }}");
-        @endif
+    @endif
     @endif
 </script>
 @yield('scripts')

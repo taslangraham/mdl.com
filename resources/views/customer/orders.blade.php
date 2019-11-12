@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
-
+@section('title')
+    Orders
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">

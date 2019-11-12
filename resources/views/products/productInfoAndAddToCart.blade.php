@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title')
+    Product/Add to cart
+@endsection
 @section('content')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     

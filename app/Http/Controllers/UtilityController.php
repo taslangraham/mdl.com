@@ -17,7 +17,7 @@ class UtilityController extends Controller
     }
 
     public static function countProducts(){
-        if (Auth::user()->hasRole('admin')){
+        if (Auth::user()->hasRole('admin|clerk')){
             return count (Products::all());
         }
     }
