@@ -69,11 +69,11 @@ return [
 //        db settings for hosting
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'db4free.net'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'mdl_database'),
-            'username' => env('DB_USERNAME', 'mdl_admin_user'),
-            'password' => env('DB_PASSWORD', 'P@ssword1@#'),
+            'host' => 'db4free.net',
+            'port' => '3306',
+            'database' => 'mdl_database',
+            'username' => 'mdl_admin_user',
+            'password' => 'P@ssword1@#',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
