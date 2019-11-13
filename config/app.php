@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', $_ENV['APP_ENV']),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', $_ENV['APP_URL']),
+
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -118,12 +119,11 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-    'key' => '32charshere',
-//    'key' => env('APP_KEY'),
-//    'key' => env('APP_KEY', $_ENV['APP_KEY']),
+    //    'key' => env('APP_KEY'),
 
-//    'cipher' => 'AES-256-CBC',
-    'cipher' => 'AES-128-CBC',
+    'key' => env('APP_KEY', $_ENV['APP_KEY']),
+
+    'cipher' => 'AES-256-CBC',
 
 
     /*
@@ -213,8 +213,8 @@ return [
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
-//        'Log' => Illuminate\Support\Facades\Log::class,
-        'Log' =>'errorlog',
+        //        'Log' => Illuminate\Support\Facades\Log::class,
+        'Log' => 'errorlog',
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
