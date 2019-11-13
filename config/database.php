@@ -70,7 +70,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => 'db4free.net',
-            'port' => '3306',
+            'port' => '',
             'database' => 'mdl_database',
             'username' => 'mdl_admin_user',
             'password' => 'P@ssword1@#',
