@@ -124,13 +124,7 @@ use App\Http\Controllers\AdminController;
                             </a>
                         </li>
                         
-                        <li>
-                            <a href="{{route('products.all')}}">
-                                <i class="fa fa-shopping-bag"></i> <span>Store</span>
-                                <span class="pull-right-container">
-                        </span>
-                            </a>
-                        </li>
+                       
                         
                         <li>
                             <a href="{{route('customer.orders')}}">
@@ -144,7 +138,7 @@ use App\Http\Controllers\AdminController;
                         @role('admin|clerk')
                         <li>
                             <a href="{{route('products')}}">
-                                <i class="fa fa-th"></i> <span>Products</span>
+                                <i class="fa fa-product-hunt"></i> <span>Products</span>
                                 <span class="pull-right-container">
                         </span>
                             </a>
@@ -163,12 +157,19 @@ use App\Http\Controllers\AdminController;
                         @role('admin')
                         <li>
                             <a href="{{route('admin.customers')}}">
-                                <i class="fa fa-th"></i> <span>Customers</span>
+                               <i class="fa fa-users"></i>Customers</span>
                                 <span class="pull-right-container">
                         </span>
                             </a>
                         </li>
                         @endrole
+                         <li>
+                            <a href="{{route('products.all')}}">
+                                <i class="fa fa-shopping-bag"></i> <span>Store</span>
+                                <span class="pull-right-container">
+                        </span>
+                            </a>
+                        </li>
                     
                     </ul>
             </section>
