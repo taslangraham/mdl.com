@@ -150,3 +150,5 @@ customer: holding@gmail.com
 
 
 
+# Hosting Laravel app on heroku
+[Hosting laravel](https://appdividend.com/2018/04/17/how-to-deploy-laravel-project-on-heroku/)

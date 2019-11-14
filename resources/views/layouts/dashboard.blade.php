@@ -63,7 +63,10 @@ use App\Http\Controllers\AdminController;
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top"  id="navbar">
             <!-- Sidebar toggle button-->
-          
+
+          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
             
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
@@ -107,7 +110,6 @@ use App\Http\Controllers\AdminController;
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar" >
                 <!-- Sidebar user panel -->
-                <div class="user-panel">
                     
                     
                     <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -169,7 +171,6 @@ use App\Http\Controllers\AdminController;
                         @endrole
                     
                     </ul>
-                </div>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -273,8 +274,8 @@ use App\Http\Controllers\AdminController;
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
-
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{asset('bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('bower_components/admin-lte/dist/js/adminlte.min.js')}}"></script>
 
 <script>
     @if(Session::has('success'))
