@@ -13,10 +13,11 @@
         <div class="container-fluid">
             <div class="row">
                 @foreach($products as $product)
-                    <div class="col-sm-3 mt-3 ml-2 card">
+                    <div class=" col-sm-3 mt-5">
+                        <div class="card">
                         <div class="card-body" style="">
                             <div class="overlay">
-                                <a href="">
+                                <a href="{{route('product.singleProduct',['productId' => $product->id])}}">
                                     <img
                                             class="img img-responsive img-fluid card-img-top"
                                             src="{{asset($product->image_path. '/'. $product->image_name)}}"
@@ -37,6 +38,7 @@
                                
                                 <a href=" {{route('product.singleProduct',['productId' => $product->id])}}"><button class="btn btn-warning" id="addToCartBtn">More</button></a>
                             </div>
+                        </div>
                         </div>
                     </div>
                 @endforeach

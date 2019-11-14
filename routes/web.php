@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('products.all');
 });
 
 Auth::routes();
@@ -52,7 +52,7 @@ Route::middleware(['role:customer', 'auth'])->prefix('customer')->group(function
     ]);
 
     Route::get('/cart/removeItem/{itemId}', [
-        'uses' => 'CustomerController@removerCartItem', 'as' =>'customer.cart.remove.item'
+        'uses' => 'CustomerController@removerCartItem', 'as' => 'customer.cart.remove.item'
     ]);
 });
 
