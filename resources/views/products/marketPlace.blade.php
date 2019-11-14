@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row">
                 @foreach($products as $product)
-                    <div class=" col-sm-3 mt-5">
+                    <div class="col-sm-3 mt-5 col-lg-3">
                         <div class="card">
                         <div class="card-body" style="">
                             <div class="overlay">
@@ -22,7 +22,7 @@
                                             class="img img-responsive img-fluid card-img-top"
                                             src="{{asset($product->image_path. '/'. $product->image_name)}}"
                                             alt=""
-                                            style="height: 200px;"
+                                            style="height: 200px; max-height:200px;"
                                     >
                                 </a>
                             </div>

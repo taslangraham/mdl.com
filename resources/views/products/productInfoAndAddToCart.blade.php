@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     
-                    <div class="card-body col-5">
+                    <div class="card-body">
                         <div class="card-text">
                             <p><strong>{{$product->name}}</strong></p> <br>
                             <p>{{'Price: $' . number_format($product->price_per_unit, 2) . ' JMD | Weight: '. $product->weight .' lbs'}}</p>
