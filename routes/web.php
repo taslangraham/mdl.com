@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    // return redirect()->route('products.all');
-    return view('welcome');
+     return redirect()->route('products.all');
+//    return view('welcome');
 });
 
 Auth::routes();
