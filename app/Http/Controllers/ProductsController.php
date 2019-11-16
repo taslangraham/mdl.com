@@ -48,6 +48,7 @@ class ProductsController extends Controller
             "image" => 'required|mimes:jpg,png,JPG,PNG,jpeg,JPEG|max:100000',
             "description" => 'required'
         ]);
+
         $this->saveProduct($request);
         Session::flash('success', 'Successfully Added product');
         return redirect()->route('products');
@@ -74,7 +75,8 @@ class ProductsController extends Controller
     private function storeImageAndReturnImageName($image)
     {
         $size = $image->getSize();
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $imageName = $image->getClientOriginalName() . time() * 3 . '.'  . $image->getClientOriginalExtension();
+
         $image->move(public_path($this->getImageBasePath()), $imageName);
         return $imageName;
     }
@@ -136,7 +138,7 @@ class ProductsController extends Controller
         $product->description = $request->description;
 
         if ($request->image) {
-//            dd($request->image);
+            //            dd($request->image);
             $imageName = $this->storeImageAndReturnImageName($request->image);
             $product->image_name = $imageName;
             $product->image_path = $this->getImageBasePath();
@@ -145,7 +147,6 @@ class ProductsController extends Controller
         $product->update();
         Session::flash('success', 'Successfully updated product');
         return redirect()->route('products');
-
     }
 
     /**
@@ -167,7 +168,7 @@ class ProductsController extends Controller
     public function all()
     {
         $products = Products::all();
-//        dd(count($products));
+        //        dd(count($products));
         return view('products.marketPlace', with(['products' => $products]));
     }
 
@@ -180,9 +181,7 @@ class ProductsController extends Controller
             return redirect()->back();
         } else {
             return view('products.productInfoAndAddToCart', with(['product' => $product]));
-
         }
-
     }
 
     public static function isProductAvailable($productId, $quantity)
@@ -204,6 +203,4 @@ class ProductsController extends Controller
     {
         return "images/products";
     }
-
-
 }

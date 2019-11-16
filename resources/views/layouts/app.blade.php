@@ -13,25 +13,30 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('bower_components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}" type="text/css" media="screen"/>
+    
+    
     <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/dist/css/AdminLTE.min.css')}}">
+    
     <script src="{{asset('/bower_components/jquery/dist/jquery.js')}}"></script>
     
     <!-- Styles -->
-
-    <link rel="stylesheet" href="{{asset('css/app.css')}}" type="text/css" media="screen"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('css/Medilab/css/style.css')}}">
+    
+    <link rel="stylesheet" href="https://bootstrapmade.com/demo/assets/css/normalize.css">
+  
 </head>
 <body style="background-color: #e9ebee">
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light  shadow-sm " style="background-color:#00838f;">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm " style="background-color:#00838f;" >
         <div class="container-fluid">
-            <a class="navbar-brand ml-5" href="{{ url('/') }}" style="color: white; font-weight: bolder">
-                {{ config('app.king', 'MDL') }}
+            <a class="navbar-brand ml-5" href="{{ url('/') }}" style="color: white; font-weight: bolder;">
+        
+                <h2 style="color:white;">{{ config('app.king', 'MDL') }}</h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -43,7 +48,8 @@
               
                 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto"  id="myNavbar">
+                    <li class="nav-item active "><a class="nav-link" style="color: white;" href="/#banner" >Home</a></li>
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item" >
@@ -81,6 +87,11 @@
                         <li class="nav-item" >
                             <a href="/store" class="nav-link" style="color: white;">Store</a>
                         </li>
+        
+                        <li class="nav-item"><a class="nav-link" style="color: white;" href="/#service">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: white;" href="/#testimonial">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: white;" href="/#about-us">About</a></li>
+
                 </ul>
             </div>
         </div>
