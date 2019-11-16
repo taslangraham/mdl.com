@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36d06312-acd6-48de-bd1f-f877880732c7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debug.log" afterPath="$PROJECT_DIR$/debug.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,10 +50,10 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="81" column="39" lean-forward="false" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+            <state relative-caret-position="264">
+              <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
               <folding>
-                <marker date="1573934338957" expanded="true" signature="4713:4736" ph="..." />
+                <marker date="1573934523684" expanded="true" signature="4675:4698" ph="..." />
               </folding>
             </state>
           </provider>
@@ -441,12 +441,12 @@
       <workItem from="1573604326765" duration="1257000" />
       <workItem from="1573612149877" duration="9305000" />
       <workItem from="1573927565278" duration="5439000" />
-      <workItem from="1573933087304" duration="1249000" />
+      <workItem from="1573933087304" duration="1434000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178177000" />
+    <option name="totallyTimeSpent" value="178362000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -829,10 +829,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="81" column="39" lean-forward="false" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+        <state relative-caret-position="264">
+          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
           <folding>
-            <marker date="1573934338957" expanded="true" signature="4713:4736" ph="..." />
+            <marker date="1573934523684" expanded="true" signature="4675:4698" ph="..." />
           </folding>
         </state>
       </provider>
