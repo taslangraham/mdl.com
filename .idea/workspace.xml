@@ -29,10 +29,10 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="82" column="36" lean-forward="false" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+            <state relative-caret-position="216">
+              <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="67" selection-end-column="0" />
               <folding>
-                <marker date="1573936956779" expanded="true" signature="4625:4648" ph="..." />
+                <marker date="1573937027453" expanded="true" signature="4663:4686" ph="..." />
               </folding>
             </state>
           </provider>
@@ -419,12 +419,12 @@
       <workItem from="1573604326765" duration="1257000" />
       <workItem from="1573612149877" duration="9305000" />
       <workItem from="1573927565278" duration="5439000" />
-      <workItem from="1573933087304" duration="3870000" />
+      <workItem from="1573933087304" duration="3933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180798000" />
+    <option name="totallyTimeSpent" value="180861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -807,10 +807,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="82" column="36" lean-forward="false" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+        <state relative-caret-position="216">
+          <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <marker date="1573936956779" expanded="true" signature="4625:4648" ph="..." />
+            <marker date="1573937027453" expanded="true" signature="4663:4686" ph="..." />
           </folding>
         </state>
       </provider>
