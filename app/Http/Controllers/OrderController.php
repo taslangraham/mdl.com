@@ -98,11 +98,10 @@ class OrderController extends Controller
 
     public function updateOrderStatus($orderId)
     {
-        $isDelivered = 1;
-        $notDelivered = 0;
+        $isDelivered = true;
+        $notDelivered = false;
 
         $order = Order::find($orderId);
-        dd($order);
         if ($order !== null) {
             $order->is_delivered = $order->is_delivered === $notDelivered ? $isDelivered : $notDelivered;
             $order->save();
