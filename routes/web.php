@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    // return redirect()->route('products.all');
+    //  return redirect()->route('products.all');
     return view('welcome');
 });
 

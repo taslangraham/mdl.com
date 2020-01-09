@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->integer('id', 10001);
             $table->integer('cutomer_id');
             $table->double('total_cost');
-            $table->boolean('isDelivered');
+            $table->boolean('is_delivered');
             $table->longText('delivery_address');
             $table->timestamps();
 
