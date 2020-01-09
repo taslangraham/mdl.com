@@ -20,8 +20,7 @@ class OrderController extends Controller
     {
         if (CustomerController::hasCartItems() < 1) {
             return false;
-        }
-        {
+        } {
             $user = User::find($customerId);
             $totalCost = CustomerController::getCartTotalBalance();
 
@@ -36,8 +35,6 @@ class OrderController extends Controller
             $this->emptyCart($user->id);
             return true;
         }
-
-
     }
 
     function addItemToOrderItem($orderId, $cartItems)
@@ -65,7 +62,6 @@ class OrderController extends Controller
 
         $orders = Order::where('customer_id', '=', $customerId)->get();
         return $orders;
-
     }
 
     public static function getOrderItemsByOrderId($orderId, $customerId)
@@ -76,9 +72,13 @@ class OrderController extends Controller
             ->where('orders.id', '=', $orderId)
             ->join('products', 'order_items.product_id', '=', 'products.id')
             ->select(
-                'order_items.quantity', 'order_items.price_per_unit as price',
-                'order_items.total', 'name', 'description',
-                'orders.id as order_id')
+                'order_items.quantity',
+                'order_items.price_per_unit as price',
+                'order_items.total',
+                'name',
+                'description',
+                'orders.id as order_id'
+            )
             ->get();
 
         return $orders;
@@ -91,7 +91,7 @@ class OrderController extends Controller
             ->join('users', 'orders.customer_id', '=', 'users.id')
             ->select('orders.id', 'users.name', 'users.email', 'orders.total_cost', 'orders.is_delivered', 'orders.customer_id')
             ->get();
-//dd($orders);
+        //dd($orders);
         return view('orders.orders', with(['orders' => $orders]));
     }
 
@@ -102,7 +102,7 @@ class OrderController extends Controller
         $notDelivered = 0;
 
         $order = Order::find($orderId);
-
+        dd($order);
         if ($order !== null) {
             $order->is_delivered = $order->is_delivered === $notDelivered ? $isDelivered : $notDelivered;
             $order->save();
